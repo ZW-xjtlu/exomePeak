@@ -1,11 +1,12 @@
 An Introduction to exomePeak
 ================
 
-> Author: Jia Meng, PhD, 2019-05-02
+> Author: Jia Meng, PhD, 2019-05-03
 
-## Installation
+Installation
+------------
 
-To install exomePeak from Github, use the following code:
+To install ***exomePeak*** from Github, use the following code:
 
 ``` r
 if (!requireNamespace("devtools", quietly = TRUE))
@@ -14,7 +15,8 @@ devtools::install_github("ZhenWei10/exomePeak2")
 library(exomePeak2)
 ```
 
-## Introduction
+Introduction
+------------
 
 The ***exomePeak*** R-package has been developed based on the MATLAB ***exomePeak*** package, for the analysis of RNA epitranscriptome sequencing data with affinity-based shotgun sequencing approach, such as MeRIP-Seq or m6A-Seq. The inputs of the main function ***exomePeak*** are the IP BAM files and input control BAM files with optional gene annotation file. The ***exomePeak*** package fullfills the following two key functions:
 
@@ -26,7 +28,8 @@ Gene annotation can be provided as a GTF file, a ***TxDb*** object, or automatic
 
 We will in the next see how the two main functions can be accomplished in a single command.
 
-## Peak Calling
+Peak Calling
+------------
 
 Let us firstly load the package and get the toy data (came with the package) ready.
 
@@ -72,7 +75,7 @@ The results will be saved in the specified output directory, including the ident
 
 The first 12 columns in both the BED and the XLS are the same as a standard BED12 format: <http://genome.ucsc.edu/FAQ/FAQformat.html_format1>
 
--   **chrom** - The name of the chromosome (e.g. chr3, chrY, chr2{\_}random) or scaffold (e.g. scaffold10671).
+-   **chrom** - The name of the chromosome (e.g. chr3, chrY, chr2\_random) or scaffold (e.g. scaffold10671).
 -   **chromStart** - The starting position of the methylation site in the chromosome or scaffold.
 -   **chromEnd** - The ending position of the RNA methylation site in the chromosome or scaffold.
 -   **name** - Defines the name of gene on which the RNA methylation site locates
@@ -127,7 +130,8 @@ head(peaks_info)
 ## 6      -163      -161           17.5
 ```
 
-## Peak Calling and Differential Methylation Analysis
+Peak Calling and Differential Methylation Analysis
+--------------------------------------------------
 
 When there are MeRIP-Seq data available from two experimental conditions, the ***exomePeak*** function may can unveil the dynamics in post-transcriptional regulation of the RNA methylome. In the following example, the function will report the sites that are post-transcriptional differentially methylated between the two tested conditions (TREATED vs. UNTREATED).
 
@@ -195,9 +199,9 @@ Along with the XLS files, the matched BED files are also generated for visualiza
 
 Similar to before,
 
--   The first 12 columns in both the BED and the XLS are the same following the standard BED12 format: [http://genome.ucsc.edu/FAQ/FAQformat.html{\\\#}format1](http://genome.ucsc.edu/FAQ/FAQformat.html%7B\#%7Dformat1) For more details, please previous section for detailed description of the first 12 columns.
+-   The first 12 columns in both the BED and the XLS are the same following the standard BED12 format: <http://genome.ucsc.edu/FAQ/FAQformat.html#format1> For more details, please previous section for detailed description of the first 12 columns.
 
--   lg.p, lg.fdr, fold{\_}enrchment are results from peak detection step, i.e., log10(pvalue), log10(fdr) and fold enrichment of the detected peak as a true methylation site. Specifically, when dealing with two experimental conditions, the fold enrichment indicates whether reads are more enriched in the pooled IP sample under both conditions than in the pooled Input sample under both conditions. The enrichment{\_}change needs to be greater than 1 to be considered being enriched as an RNA methylation site.
+-   lg.p, lg.fdr, fold\_enrchment are results from peak detection step, i.e., log10(pvalue), log10(fdr) and fold enrichment of the detected peak as a true methylation site. Specifically, when dealing with two experimental conditions, the fold enrichment indicates whether reads are more enriched in the pooled IP sample under both conditions than in the pooled Input sample under both conditions. The enrichment\_change needs to be greater than 1 to be considered being enriched as an RNA methylation site.
 
 -   diff.lg.fdr, diff.lg.p, diff.log2.fc are results from differential methylation analysis, i.e., log10(fdr), log10(pvalue) and log2(odds ratio) of the peak as a differential methylation site between the two experimental conditions tested. If diff.log2.fc is larger than 0, the site is hypermethylated under the treated condition, otherwise if smaller than 0, it is hypomethylated under the treated condition.
 
@@ -239,7 +243,8 @@ head(peaks_info[,4:6]) # differential analysis information
 ## 6       -1.28      -2.2        -1.45
 ```
 
-## Download Gene Annotation Directly from Internet
+Download Gene Annotation Directly from Internet
+-----------------------------------------------
 
 Gene annotation may be alternatively downloaded directly from internet, but will take a really long time due to the downloading time and huge transcriptome needed to be scanned.
 
@@ -253,7 +258,8 @@ result <- exomepeak(GENOME="hg19",
 
 Please make sure to use the right genome assembly.
 
-## Handling Paired-end Reads
+Handling Paired-end Reads
+-------------------------
 
 Unfortunately, exomePeak currently supports pair-end data in a naive mode, i.e., treat pair of reads as two independent reads rather than a single fragment. "treat pair of reads as two independent reads rather than a single fragment" refers to the internal process of exomePeak package, not how you align the reads. Even if the paired end data is aligned as paired end data, the pairing information will still be ignored when analyzed by exomePeak.
 
