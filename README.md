@@ -114,7 +114,7 @@ head(peaks_info)
 ## 6      -163      -161           17.5
 ```
 
-or to get all the peak detected (some of them do not consistently appear on all replicates:
+or to get all the peak detected (some of them do not consistently appear on all replicates):
 
 ``` r
 all_peaks <- result$all_peaks # get all peaks
