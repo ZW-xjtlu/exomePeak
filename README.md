@@ -72,8 +72,6 @@ The results will be saved in the specified output directory, including the ident
 
 The first 12 columns in both the BED and the XLS are the same as a standard BED12 format: <http://genome.ucsc.edu/FAQ/FAQformat.html_format1>
 
-------------------------------------------------------------------------
-
 -   **chrom** - The name of the chromosome (e.g. chr3, chrY, chr2{\_}random) or scaffold (e.g. scaffold10671).
 -   **chromStart** - The starting position of the methylation site in the chromosome or scaffold.
 -   **chromEnd** - The ending position of the RNA methylation site in the chromosome or scaffold.
@@ -90,8 +88,6 @@ The first 12 columns in both the BED and the XLS are the same as a standard BED1
 ------------------------------------------------------------------------
 
 The meaning of the last 3 columns of the xls file is:
-
-------------------------------------------------------------------------
 
 -   **lg.p** - log10(p-value) of the peak, indicating the significance of the peak as an RNA methylation site
 -   **lg.fdr** - log10(fdr) of the peak, indicating the significance of the peak as an RNA methylation site after multiple hypothesis correction
@@ -189,8 +185,6 @@ The algorithm will firstly identify reads enriched binding sites or peaks, and t
 
 Similar to the peak calling case, the function will report a set of consistent differentially methylated peaks (`con_sig_diff_peak.xls`) saved in the specified folder, which is the recommended set.
 
-------------------------------------------------------------------------
-
 -   `diff_peak.xls` - all the detected peaks and their differential methylation information
 -   `sig_diff_peak.xls` - all the differentially methylated peaks
 -   `con_sig_diff_peak.xls` - all the consistently differentially methylated peaks. There are peaks are consistently differentially methylated among all replicates, indicating highly confidence. This set of differential methylation peaks is highly suggested.
@@ -200,8 +194,6 @@ Similar to the peak calling case, the function will report a set of consistent d
 Along with the XLS files, the matched BED files are also generated for visualization purpose.
 
 Similar to before,
-
-------------------------------------------------------------------------
 
 -   The first 12 columns in both the BED and the XLS are the same following the standard BED12 format: [http://genome.ucsc.edu/FAQ/FAQformat.html{\\\#}format1](http://genome.ucsc.edu/FAQ/FAQformat.html%7B\#%7Dformat1) For more details, please previous section for detailed description of the first 12 columns.
 

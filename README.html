@@ -251,7 +251,6 @@ names(result)
 ## [1] &quot;all_peaks&quot; &quot;con_peaks&quot;</code></pre>
 <p>The results will be saved in the specified output directory, including the identified peaks and consistent peaks in BED or XLS (tab-delimited) format. The BED format can be visualized in genome browser directly and the peaks may span one or multiple introns. The difference between peak and consistent peak is that, the peaks in the <code>con_peak</code> file are consitently enriched in all the IP replicates, so indicates higher re-producability.</p>
 <p>The first 12 columns in both the BED and the XLS are the same as a standard BED12 format: <a href="http://genome.ucsc.edu/FAQ/FAQformat.html_format1" class="uri">http://genome.ucsc.edu/FAQ/FAQformat.html_format1</a></p>
-<hr />
 <ul>
 <li><strong>chrom</strong> - The name of the chromosome (e.g. chr3, chrY, chr2{_}random) or scaffold (e.g. scaffold10671).</li>
 <li><strong>chromStart</strong> - The starting position of the methylation site in the chromosome or scaffold.</li>
@@ -268,7 +267,6 @@ names(result)
 </ul>
 <hr />
 <p>The meaning of the last 3 columns of the xls file is:</p>
-<hr />
 <ul>
 <li><strong>lg.p</strong> - log10(p-value) of the peak, indicating the significance of the peak as an RNA methylation site</li>
 <li><strong>lg.fdr</strong> - log10(fdr) of the peak, indicating the significance of the peak as an RNA methylation site after multiple hypothesis correction</li>
@@ -287,7 +285,7 @@ head(peaks_info)
 ## 4      -221      -219           15.5
 ## 5     -14.6     -13.6           5.81
 ## 6      -163      -161           17.5</code></pre>
-<p>or to get all the peak detected (some of them do not consistently appear on all replicates:</p>
+<p>or to get all the peak detected (some of them do not consistently appear on all replicates):</p>
 <pre class="r"><code>all_peaks &lt;- result$all_peaks # get all peaks
 peaks_info &lt;- mcols(all_peaks) # information of all peaks
 head(peaks_info)
@@ -348,7 +346,6 @@ f9 &lt;- system.file(&quot;extdata&quot;, &quot;treated_Input1.bam&quot;, packag
 ## [1] &quot;---------------------------------&quot;</code></pre>
 <p>The algorithm will firstly identify reads enriched binding sites or peaks, and then check whether the sites are differentially methylated between the two experimental conditions. The results will be saved in the specified output directory, including the identified (consistent) peaks in BED and tab-delimited formats, along with the differential information indicating whether the site is hyper- or hypo-methylated under the treated condition. Similar to the peak calling case, the BED format can be visualized in genome browser directly and the peaks may span one or multiple introns.</p>
 <p>Similar to the peak calling case, the function will report a set of consistent differentially methylated peaks (<code>con_sig_diff_peak.xls</code>) saved in the specified folder, which is the recommended set.</p>
-<hr />
 <ul>
 <li><code>diff_peak.xls</code> - all the detected peaks and their differential methylation information</li>
 <li><code>sig_diff_peak.xls</code> - all the differentially methylated peaks</li>
@@ -357,7 +354,6 @@ f9 &lt;- system.file(&quot;extdata&quot;, &quot;treated_Input1.bam&quot;, packag
 <hr />
 <p>Along with the XLS files, the matched BED files are also generated for visualization purpose.</p>
 <p>Similar to before,</p>
-<hr />
 <ul>
 <li><p>The first 12 columns in both the BED and the XLS are the same following the standard BED12 format: <a href="http://genome.ucsc.edu/FAQ/FAQformat.html%7B#%7Dformat1">http://genome.ucsc.edu/FAQ/FAQformat.html{\#}format1</a> For more details, please previous section for detailed description of the first 12 columns.</p></li>
 <li><p>lg.p, lg.fdr, fold{_}enrchment are results from peak detection step, i.e., log10(pvalue), log10(fdr) and fold enrichment of the detected peak as a true methylation site. Specifically, when dealing with two experimental conditions, the fold enrichment indicates whether reads are more enriched in the pooled IP sample under both conditions than in the pooled Input sample under both conditions. The enrichment{_}change needs to be greater than 1 to be considered being enriched as an RNA methylation site.</p></li>
