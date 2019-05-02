@@ -1,0 +1,24 @@
+
+version 1.4.1: (2014-07-02)
+- fixed bug: sometimes bed file is not displayed properly
+- added "NEWS" section
+- added reference information
+
+
+version 1.8.1: (2015-06-01)
+- fixed a few bugs
+
+
+version 1.9.1: (2015-6-25)
+- integrated the RMT tool for extracting the combinatorial RNA methylome from multiple MeRIP-Seq datasets, see ?RMT
+- 3 authors: Jia Meng, Lin Zhang and Lian Liu
+- added another citation (Liu 2015)
+
+version 1.9.2: (2015-8-9)
+- corrected fold change calculation in bltest, by Lin Zhang
+
+
+version 2.13.0: (2017-10-24)
+- package overview revised 
+- revision due to the changes of a dependent package
+

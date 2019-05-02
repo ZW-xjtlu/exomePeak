@@ -1,0 +1,36 @@
+citEntry(entry="article",
+         title = "Exome-based analysis for RNA epigenome sequencing data",
+         author = personList( as.person("Jia Meng"), 
+                              as.person("Xiaodong Cui"),
+                              as.person("Manjeet K. Rao"),
+                              as.person("Yidong Chen"),
+                              as.person("Yufei Huang")),
+         year = 2013,
+         journal = "Bioinformatics",
+         volume = "29",
+         pages = "1565-1567",
+         doi = "10.1093/bioinformatics/btt171",
+
+         textVersion = 
+           paste("J. Meng, X. Cui, M. K. Rao, Y. Chen, and Y. Huang, ",
+                 "Exome-based analysis for RNA epigenome sequencing data,",
+                 " Bioinformatics, vol. 29, pp. 1565-1567, June 15, 2013 2013." ) )
+
+
+citEntry(entry="article",
+         title = "A protocol for RNA methylation differential analysis with MeRIP-Seq data and exomePeak R/Bioconductor package",
+         author = personList( as.person("Jia Meng"), 
+                              as.person("Zhiliang Lu"),
+                              as.person("Hui Liu"),
+                              as.person("Lin Zhang"),
+                              as.person("Shaowu Zhang"),
+                              as.person("Yidong Chen"),
+                              as.person("Manjeet K. Rao"),
+                              as.person("Yufei Huang")),
+         year = 2014,
+         journal = "Methods",
+         
+         textVersion = 
+           paste("J. Meng, Z. Lu, H. Liu, L. Zhang, S. Zhang, Y. Chen, M. K. Rao, and Y. Huang, ",
+                 "A protocol for RNA methylation differential analysis with MeRIP-Seq data and exomePeak R/Bioconductor package,",
+                 " Methods, 2014" ) )
