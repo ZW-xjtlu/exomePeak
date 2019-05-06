@@ -19,8 +19,8 @@ To install ***exomePeak*** from Github, use the following code:
 ```{r, eval = FALSE}
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
-devtools::install_github("ZhenWei10/exomePeak2")
-library(exomePeak2)
+devtools::install_github("ZhenWei10/exomePeak")
+library(exomePeak)
 ```
 
 ## Introduction
