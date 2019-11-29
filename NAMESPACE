@@ -4,4 +4,6 @@ export(rhtest)
 export(exomepeak)
 export(bltest)
 export(RMT)
-
+import(GenomicFeatures)
+import(Rsamtools)
+import(GenomicAlignments)

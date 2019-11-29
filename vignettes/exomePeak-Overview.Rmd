@@ -1,6 +1,19 @@
 ---
-title: "An Introduction to exomePeak"
-output: github_document
+title: "The *exomePeak* user's guide"
+author: |
+  | Jia Meng <JiaMeng@xjtlu.edu.cn>
+  | Department of Biological Sciences, Xi’an Jiaotong-Liverpool University, Suzhou, Jiangsu, 215123, China
+  | Institute of Integrative Biology, University of Liverpool, L7 8TX, Liverpool, United Kingdom
+date: "`r Sys.Date()`"
+output:
+  BiocStyle::html_document:
+    toc: true
+graphics: yes
+vignette: >
+  %\VignetteIndexEntry{The exomePeak user's guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignettePackage{exomePeak}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r para, echo = FALSE, results='hide'}
@@ -9,18 +22,6 @@ knitr::opts_chunk$set(dev="png",fig.show="hold",
                fig.width=8,fig.height=4.5,fig.align="center",
                message=FALSE,collapse=TRUE)
 set.seed(1)
-```
-
->  Author:  Jia Meng, PhD, `r Sys.Date()`
-
-## Installation
-
-To install ***exomePeak*** from Github, use the following code:
-```{r, eval = FALSE}
-if (!requireNamespace("devtools", quietly = TRUE))
-    install.packages("devtools")
-devtools::install_github("ZhenWei10/exomePeak")
-library(exomePeak)
 ```
 
 ## Introduction
@@ -193,4 +194,3 @@ Unfortunately, exomePeak currently supports pair-end data in a naive mode, i.e.,
 ```{r}
 sessionInfo()
 ```
-

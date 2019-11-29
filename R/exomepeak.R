@@ -125,7 +125,8 @@ exomepeak <- function(
     for (ibatch in 1:no_batch){
       reads_count_group=rbind(reads_count_group,temp[[ibatch]])
     }
-    READS_COUNT=rbind(READS_COUNT,reads_count_group)}
+    READS_COUNT=rbind(READS_COUNT,reads_count_group)
+    }
   READS_COUNT=data.frame(READS_COUNT)
   
   # peak calling

@@ -23,7 +23,10 @@ for (iSample in 1:length(SAMPLE_ID$ip)) {
 }
 
 # output peaks
-PEAK=list(PW=global.pw, Merged=global.sig.check.point.id, Consistent=consistent.sid)
+PEAK = list(PW = global.pw,
+            Merged = global.sig.check.point.id,
+            Consistent = consistent.sid)
+
 ID=PEAK$Merged
 PEAK$loci2peak_merged=.get.peak.from.loci(READS_COUNT,ID,PARAMETERS)
 ID=PEAK$Consistent
