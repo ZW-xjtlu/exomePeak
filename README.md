@@ -9,9 +9,19 @@ Installation
 To install ***exomePeak*** from Github, use the following code:
 
 ``` r
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(c("SummarizedExperiment","cqn","Rsamtools",
+                       "GenomicAlignments","GenomicRanges","GenomicFeatures",
+                       "DESeq2","ggplot2","mclust",
+                       "genefilter","BSgenome","BiocParallel",
+                       "IRanges","S4Vectors","quantreg",
+                       "reshape2","rtracklayer","apeglm","RMariaDB"))
+
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
-devtools::install_github("ZhenWei10/exomePeak")
+devtools::install_github("ZW-xjtlu/exomePeak")
 library(exomePeak)
 ```
 

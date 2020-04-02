@@ -17,9 +17,13 @@ set.seed(1)
 
 To install ***exomePeak*** from Github, use the following code:
 ```{r, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(c("Rsamtools","GenomicFeatures","rtracklayer","GenomicAlignments"))
+
 if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
-devtools::install_github("ZhenWei10/exomePeak")
+devtools::install_github("ZW-xjtlu/exomePeak")
 library(exomePeak)
 ```
 
